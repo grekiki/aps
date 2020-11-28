@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-class I{
+class I2{
 	static BufferedReader in;
 	static StringTokenizer st;
 	public static String nextToken() throws Exception{
@@ -169,16 +169,16 @@ public class Naloga2{
 	public static void main(String[] args) throws Exception{
 //		System.out.println("Working");
 		if(args.length>0){
-			I.reset(args[0]);
+			I2.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
 //		I.reset("T1.2\\I2_10.txt");
-		int h=I.readInt();
-		int w=I.readInt();
+		int h=I2.readInt();
+		int w=I2.readInt();
 		int[][] grid=new int[w][h];
 		int p=0;
 		for(int y=0;y<h;y++){
-			String s=I.readLine().replace(",","");
+			String s=I2.readLine().replace(",","");
 			for(int x=0;x<w;x++){
 				grid[x][y]=s.charAt(x)-'a';
 			}
