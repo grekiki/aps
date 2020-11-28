@@ -1,0 +1,6 @@
+5,10
+a,a,a,a,d,a,a,a,a,d
+a,a,a,d,a,a,a,a,a,a
+a,a,a,a,a,a,d,d,a,a
+a,a,a,d,a,a,a,d,a,a
+a,d,d,a,a,a,a,a,a,a

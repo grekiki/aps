@@ -1,0 +1,8 @@
+7,7
+c,a,a,b,d,c,d
+d,b,d,c,b,d,b
+c,d,d,c,b,b,c
+c,b,d,b,a,b,a
+a,b,a,d,a,d,b
+d,a,b,c,c,c,c
+b,c,d,c,d,b,c

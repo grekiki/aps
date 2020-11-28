@@ -1,0 +1,15 @@
+14,14
+c,a,b,a,a,c,d,a,d,c,d,a,d,a
+d,a,d,a,c,a,a,c,d,a,c,a,a,a
+d,a,a,d,c,a,a,a,a,c,c,a,d,a
+c,a,a,a,c,a,a,b,b,a,a,c,d,a
+b,a,c,a,a,a,a,c,a,a,a,a,a,a
+a,a,c,a,a,b,a,c,a,b,a,c,a,a
+a,a,a,b,c,a,d,a,b,a,a,d,a,a
+a,c,c,a,a,a,a,a,c,d,c,a,a,c
+a,a,a,c,c,a,a,c,a,a,a,a,a,c
+a,d,a,a,a,a,a,c,a,c,a,a,b,a
+a,a,a,a,d,a,a,c,c,d,d,d,a,a
+d,c,b,a,a,a,a,b,b,a,c,c,a,c
+a,c,c,c,a,a,a,a,a,a,b,a,d,c
+d,a,a,a,b,a,a,a,a,a,c,b,c,c

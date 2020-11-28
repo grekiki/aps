@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-class I{
+class I1{
 	static BufferedReader in;
 	static StringTokenizer st;
 	public static String nextToken() throws Exception{
@@ -119,18 +119,18 @@ public class Naloga1{
 	public static void main(String[] args) throws Exception{
 		System.out.println("Working");
 		if(args.length>0){
-			I.reset(args[0]);
+			I1.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
-		len=I.readInt();
-		tank=I.readInt();
-		postaje=I.readInt();
+		len=I1.readInt();
+		tank=I1.readInt();
+		postaje=I1.readInt();
 		dist=new int[1+postaje];
 		cost=new int[1+postaje];
 		for(int i=1;i<=postaje;i++){
-			I.readInt();
-			dist[i]=I.readInt()+dist[i-1];
-			cost[i]=I.readInt();
+			I1.readInt();
+			dist[i]=I1.readInt()+dist[i-1];
+			cost[i]=I1.readInt();
 		}
 		dp=new int[postaje+1];
 		best=new int[postaje+1];
