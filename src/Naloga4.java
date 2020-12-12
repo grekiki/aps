@@ -5,11 +5,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
-class I{
+class I4{
 	static BufferedReader in;
 	static StringTokenizer st;
 	public static String nextToken() throws Exception{
@@ -87,20 +85,23 @@ class prazno{
 		return len+": "+pos+"-"+(pos+len);
 	}
 }
+class list_prazno{
+	prazno[]f;
+	list_prazno(){
+		f=new prazno[10];
+	}
+}
 public class Naloga4{
-	static int[] px=new int[100];
-	static int[] py=new int[100];
-
 	static PrintWriter out=new PrintWriter(System.out);
 	public static void main(String[] args) throws Exception{
 //		System.out.println("Working");
 		if(args.length>0){
-			I.reset(args[0]);
+			I4.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
 //		I.reset("T1.2\\I2_10.txt");
-		int commands=I.readInt()-1;
-		int len=Integer.parseInt(I.readLine().substring(2));
+		int commands=I4.readInt()-1;
+		int len=Integer.parseInt(I4.readLine().substring(2));
 		//f(id)-> pos, len
 		int[] pos=new int[1000000];
 		int[] slen=new int[1000000];
@@ -114,7 +115,7 @@ public class Naloga4{
 		ArrayList<prazno> alloc_space=new ArrayList<prazno>();
 		alloc_space.add(new prazno(0,len));
 		for(int i=0;i<commands;i++){
-			String s=I.readLine();
+			String s=I4.readLine();
 			if(s.charAt(0)=='a'){
 				String t=s.substring(2).replace(","," ");
 				int alen=Integer.parseInt(t.split(" ")[0]);
