@@ -5,7 +5,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-class I{
+
+
+//RESITEV NE DELUJE!!!
+
+
+class I5{
 	static BufferedReader in;
 	static StringTokenizer st;
 	public static String nextToken() throws Exception{
@@ -251,11 +256,11 @@ public class Naloga5{
 	}
 	public static void main(String[] args) throws Exception{
 		if(args.length>0){
-			I.reset(args[0]);
+			I5.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
-		sirina=I.readInt();
-		visina=I.readInt();
+		sirina=I5.readInt();
+		visina=I5.readInt();
 		stanje.visina=visina;
 		stanje start=parse_stanje(sirina);
 		cilj=parse_stanje(sirina);
@@ -269,7 +274,7 @@ public class Naloga5{
 	private static stanje parse_stanje(int sirina) throws Exception{
 		String[] q=new String[sirina];
 		for(int i=0;i<sirina;i++){
-			q[i]=I.readLine().substring(2).replace(",","");
+			q[i]=I5.readLine().substring(2).replace(",","");
 		}
 		return new stanje(q);
 	}
