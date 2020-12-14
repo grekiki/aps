@@ -6,11 +6,11 @@ import java.util.*;
  * @author Gregor
  *
  */
-class conn{
+class edge{
 	int s;
 	int d;
 	int w;
-	conn(int s,int d,int w){
+	edge(int s,int d,int w){
 		this.s=s;
 		this.d=d;
 		this.w=w;
@@ -28,12 +28,12 @@ class conn{
  */
 class graf{
 	int n;
-	ArrayList<conn>[] E;
+	ArrayList<edge>[] E;
 	graf(int n){
 		this.n=n;
 		E=new ArrayList[n];
 		for(int i=0;i<n;i++){
-			E[i]=new ArrayList<conn>();
+			E[i]=new ArrayList<edge>();
 		}
 	}
 	@Override public String toString(){
@@ -44,7 +44,7 @@ class graf{
 		return s;
 	}
 
-	public long[] solve(int pos,int range){
+	long[] solve(int pos,int range){
 		//Dijkstra, nic zanimivega
 		long[] dist=new long[n];
 		Arrays.fill(dist,Long.MAX_VALUE/2);
@@ -59,7 +59,7 @@ class graf{
 		}
 		while(!dij.isEmpty()){
 			int p=dij.poll();
-			for(conn e:E[p]){
+			for(edge e:E[p]){
 				if(dist[e.d]>dist[p]+e.w){
 					dist[e.d]=dist[p]+e.w;
 					dij.add(e.d);
@@ -158,8 +158,8 @@ class Naloga6{
 			int l=I.readInt();
 			int r=I.readInt();
 			int w=I.readInt();
-			g.E[l].add(new conn(l,r,w));
-			g.E[r].add(new conn(r,l,w));
+			g.E[l].add(new edge(l,r,w));
+			g.E[r].add(new edge(r,l,w));
 		}
 		int[] col=new int[cities];
 		for(int i=1;i<=S;i++){
@@ -181,7 +181,7 @@ class Naloga6{
 		ArrayList<String> names=new ArrayList<String>();//Imena tock, za debugging
 		for(int i=0;i<cities;i++){
 			HashSet<Integer> b=new HashSet<Integer>();
-			for(conn e:g.E[i]){
+			for(edge e:g.E[i]){
 				b.add(col[e.d]);
 			}
 			barve[i]=new ArrayList<Integer>();
@@ -206,16 +206,16 @@ class Naloga6{
 				int curr=init+j;
 				int prev_col=barve[i].get(j);//Iz tukaj smo prisli
 				//Gremo po vseh sosedih
-				for(conn c:g.E[i]){
+				for(edge c:g.E[i]){
 					int r=c.d;
-					if(col[r]==prev_col){
+					if(col[r]==prev_col&&prev_col!=0){
 						continue;
 					}
 					for(int k=0;k<len[r];k++){
 						int this_col=barve[r].get(k);
 						//input_col od soseda mora biti enak nasi barvi
 						if(this_col==col[i]){
-							g2.E[curr].add(new conn(curr,pos[r]+k,c.w));
+							g2.E[curr].add(new edge(curr,pos[r]+k,c.w));
 						}
 					}
 				}
@@ -225,7 +225,7 @@ class Naloga6{
 		//Natisnemo nov graf
 //		for(int i=0;i<size;i++){
 //			System.out.print(names.get(i)+": ");
-//			for(conn j:g2.E[i]){
+//			for(edge j:g2.E[i]){
 //				System.out.print(names.get(j.d)+" "+j.w+", ");
 //			}
 //			System.out.println();
