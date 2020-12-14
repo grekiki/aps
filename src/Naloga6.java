@@ -26,10 +26,10 @@ class edge{
  * @author Gregor
  *
  */
-class graf{
+class graf2{
 	int n;
 	ArrayList<edge>[] E;
-	graf(int n){
+	graf2(int n){
 		this.n=n;
 		E=new ArrayList[n];
 		for(int i=0;i<n;i++){
@@ -70,7 +70,7 @@ class graf{
 	}
 }
 
-class I{
+class I6{
 	static BufferedReader in;
 	static StringTokenizer st;
 	static String nextToken() throws Exception{
@@ -143,29 +143,29 @@ class Naloga6{
 
 	public static void main(String[] args) throws Exception{
 		if(args.length>0){
-			I.reset(args[0]);
+			I6.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
-		int cities=I.readInt();
-		int E=I.readInt();
-		int S=I.readInt();
+		int cities=I6.readInt();
+		int E=I6.readInt();
+		int S=I6.readInt();
 
-		int s=I.readInt();
-		int d=I.readInt();
+		int s=I6.readInt();
+		int d=I6.readInt();
 
-		graf g=new graf(cities);
+		graf2 g=new graf2(cities);
 		for(int i=0;i<E;i++){
-			int l=I.readInt();
-			int r=I.readInt();
-			int w=I.readInt();
+			int l=I6.readInt();
+			int r=I6.readInt();
+			int w=I6.readInt();
 			g.E[l].add(new edge(l,r,w));
 			g.E[r].add(new edge(r,l,w));
 		}
 		int[] col=new int[cities];
 		for(int i=1;i<=S;i++){
-			int t=I.readInt();
+			int t=I6.readInt();
 			for(int j=0;j<t;j++){
-				col[I.readInt()]=i;
+				col[I6.readInt()]=i;
 			}
 		}
 //		System.out.println(g);
@@ -199,7 +199,7 @@ class Naloga6{
 //		System.out.println(names);
 //		System.out.println();
 		//Naredimo usmerjen graf pravilne velikosti
-		graf g2=new graf(size);
+		graf2 g2=new graf2(size);
 		for(int i=0;i<cities;i++){
 			int init=pos[i];
 			for(int j=0;j<len[i];j++){
