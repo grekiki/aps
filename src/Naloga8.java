@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
-
-class I8{
+//Tole je razred za obdelavo vhodnih podatkov
+class I{
 	static BufferedReader in;
 	static StringTokenizer st;
 	static String nextToken() throws Exception{
@@ -68,16 +68,86 @@ class I8{
 		in=new BufferedReader(new FileReader(new File("input"+p+".txt")));
 	}
 }
-
+/**
+ * Node v drevesu
+ *
+ */
+class Node{
+	char c;
+	ArrayList<Node> ch;
+	Node(){
+		ch=new ArrayList<Node>();
+	}
+	/**
+	 * Ali je "v" v this?
+	 */
+	public boolean matches(Node v) {
+		if(c!=v.c) {
+			return false;
+		}
+		if(v.ch.size()==0) {
+			return true;
+		}
+		if(ch.size()!=v.ch.size()) {
+			return false;
+		}
+		for(int i=0;i<ch.size();i++) {
+			if(!ch.get(i).matches(v.ch.get(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
 class Naloga8{
 	static PrintWriter out=new PrintWriter(System.out);
-
+	public static Node[] parseTree() throws Exception {
+		int nV=I.readInt();
+		Node[] drevo=new Node[nV];
+		for(int i=0;i<nV;i++) {
+			drevo[i]=new Node();
+		}
+		for(int i=0;i<nV;i++) {
+			int id=I.readInt()-1;
+			char c=I.readString().charAt(0);
+			drevo[id].c=c;
+			while(I.st.hasMoreElements()) {
+				int childId=I.readInt()-1;
+				drevo[id].ch.add(drevo[childId]);
+			}
+		}
+		return drevo;
+	}
 	public static void main(String[] args) throws Exception{
 		if(args.length>0){
-			I8.reset(args[0]);
+			I.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
+		//Poberemo vzorec in drevo kot seznam vozlisc
+		Node[] vzorec=parseTree();
+		Node[] drevo=parseTree();
 		
+		Node root_vzorca=vzorec[0];
+		int count=0;
+		for(Node n:drevo) {
+			if(n.matches(root_vzorca)) {
+				count++;
+			}
+		}
+		out.println(count);
+		out.close();
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
