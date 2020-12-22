@@ -113,7 +113,7 @@ public class Naloga3 {
 				dekoderan += 'C';
 				break;
 			case 3:
-				dekoderan += 'ÄŒ';
+				dekoderan += 'È';
 				break;
 			case 4:
 				dekoderan += 'D';
@@ -161,7 +161,7 @@ public class Naloga3 {
 				dekoderan += 'S';
 				break;
 			case 19:
-				dekoderan += 'Å ';
+				dekoderan += 'Š';
 				break;
 			case 20:
 				dekoderan += 'T';
@@ -176,7 +176,7 @@ public class Naloga3 {
 				dekoderan += 'Z';
 				break;
 			case 24:
-				dekoderan += 'Å½';
+				dekoderan += '';
 				break;
 			case 25:
 				dekoderan += 'a';
@@ -188,7 +188,7 @@ public class Naloga3 {
 				dekoderan += 'c';
 				break;
 			case 28:
-				dekoderan += 'Ä';
+				dekoderan += 'è';
 				break;
 			case 29:
 				dekoderan += 'd';
@@ -236,7 +236,7 @@ public class Naloga3 {
 				dekoderan += 's';
 				break;
 			case 44:
-				dekoderan += 'Å¡';
+				dekoderan += 'š';
 				break;
 			case 45:
 				dekoderan += 't';
@@ -251,7 +251,7 @@ public class Naloga3 {
 				dekoderan += 'z';
 				break;
 			case 49:
-				dekoderan += 'Å¾';
+				dekoderan += '';
 				break;
 			case 50:
 				dekoderan += ' ';

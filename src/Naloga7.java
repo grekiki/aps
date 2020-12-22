@@ -130,7 +130,7 @@ class graf{
 	}
 }
 
-class I{
+class I7{
 	static BufferedReader in;
 	static StringTokenizer st;
 	static String nextToken() throws Exception{
@@ -203,17 +203,17 @@ class Naloga7{
 
 	public static void main(String[] args) throws Exception{
 		if(args.length>0){
-			I.reset(args[0]);
+			I7.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
-		int n=I.readInt();
-		int E=I.readInt();
+		int n=I7.readInt();
+		int E=I7.readInt();
 		graf g=new graf(n);
-		int l=I.readInt();
-		int r=I.readInt();
+		int l=I7.readInt();
+		int r=I7.readInt();
 		for(int i=0;i<E;i++){
-			int pl=I.readInt();
-			int pr=I.readInt();
+			int pl=I7.readInt();
+			int pr=I7.readInt();
 			g.E[pl].add(pr);
 			g.E[pr].add(pl);
 		}
