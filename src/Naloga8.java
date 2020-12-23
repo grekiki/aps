@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 //Tole je razred za obdelavo vhodnih podatkov
-class I{
+class I8{
 	static BufferedReader in;
 	static StringTokenizer st;
 	static String nextToken() throws Exception{
