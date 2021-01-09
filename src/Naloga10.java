@@ -121,7 +121,7 @@ class Naloga10{
 					if(visitsSet.contains(e.r)) {
 						continue;
 					}
-					int nodeScore=e.cost+h[e.r];
+					var nodeScore=e.cost+h[e.r];
 					if(nodeScore<bestScore) {
 						bestScore=nodeScore;
 						bestId=e.r;

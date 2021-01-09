@@ -20,7 +20,7 @@ class I8{
 		if(st!=null&&st.hasMoreTokens()){
 			System.out.println("Parsing warning in readInts()");
 		}
-		String s=in.readLine().replaceAll("[^0-9 \\-]","");
+		var s=in.readLine().replaceAll("[^0-9 \\-]","");
 		StringTokenizer st=new StringTokenizer(s);
 		int[] q=new int[st.countTokens()];
 		for(int i=0;i<q.length;i++){
