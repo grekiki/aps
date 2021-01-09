@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 //Tole je razred za obdelavo vhodnih podatkov
-class I{
+class I10{
 	static BufferedReader in;
 	static StringTokenizer st;
 	static String nextToken() throws Exception{
@@ -84,7 +84,7 @@ class Naloga10{
 	
 	public static void main(String[] args) throws Exception{
 		if(args.length>0){
-			I8.reset(args[0]);
+			I10.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
 		ArrayList<edge2>[]adj=new ArrayList[10000];
@@ -93,13 +93,13 @@ class Naloga10{
 		}
 		int E=I.readInt();
 		for(int i=0;i<E;i++) {
-			int pl=I.readInt();
-			int pr=I.readInt();
-			int c=I.readInt();
+			int pl=I10.readInt();
+			int pr=I10.readInt();
+			int c=I10.readInt();
 			adj[pl].add(new edge2(pl,pr,c));
 		}
-		int start=I.readInt();
-		int end=I.readInt();
+		int start=I10.readInt();
+		int end=I10.readInt();
 		int[]h=new int[100000];
 		int inf=Integer.MAX_VALUE/2;
 		ArrayList<Integer> pvisits=null;
@@ -140,7 +140,7 @@ class Naloga10{
 				visits.add(curr);
 				visitsSet.add(curr);
 			}
-			out.println(visits.toString().replaceAll("[\\[\\]]",""));
+			out.println(visits.toString().replaceAll("[\\[\\]]","").replace(" ",""));
 			if(!worked&&visits.equals(pvisits)) {
 				break;
 			}
