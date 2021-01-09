@@ -69,17 +69,86 @@ class I{
 	}
 }
 
+class edge2{
+	int l,r,cost;
+
+	public edge2(int l, int r, int cost) {
+		this.l = l;
+		this.r = r;
+		this.cost = cost;
+	}
+	
+}
 class Naloga10{
 	static PrintWriter out=new PrintWriter(System.out);
 	
 	public static void main(String[] args) throws Exception{
 		if(args.length>0){
-			I.reset(args[0]);
+			I8.reset(args[0]);
 			out=new PrintWriter(new FileWriter(args[1]));
 		}
-		
+		ArrayList<edge2>[]adj=new ArrayList[10000];
+		for(int i=0;i<adj.length;i++) {
+			adj[i]=new ArrayList<edge2>();
+		}
+		int E=I.readInt();
+		for(int i=0;i<E;i++) {
+			int pl=I.readInt();
+			int pr=I.readInt();
+			int c=I.readInt();
+			adj[pl].add(new edge2(pl,pr,c));
+		}
+		int start=I.readInt();
+		int end=I.readInt();
+		int[]h=new int[100000];
+		int inf=Integer.MAX_VALUE/2;
+		ArrayList<Integer> pvisits=null;
+		while(true) {
+			ArrayList<Integer> visits=new ArrayList<Integer>();
+			HashSet<Integer> visitsSet=new HashSet<Integer>();
+			boolean worked=false;
+			visits.add(start);
+			visitsSet.add(start);
+			int curr=start;
+			while(curr!=end) {
+				if(adj[curr].size()==0) {
+					h[curr]=inf+1;
+					break;
+				}
+				int bestScore=inf;
+				int bestId=-1;
+				for(edge2 e:adj[curr]) {
+					if(visitsSet.contains(e.r)) {
+						continue;
+					}
+					int nodeScore=e.cost+h[e.r];
+					if(nodeScore<bestScore) {
+						bestScore=nodeScore;
+						bestId=e.r;
+					}else if(nodeScore==bestScore&&e.r<bestId) {
+						bestId=e.r;
+					}
+				}
+				if(bestId==-1){
+					break;
+				}
+				if(h[curr]<bestScore) {
+					worked=true;
+					h[curr]=bestScore;
+				}
+				curr=bestId;
+				visits.add(curr);
+				visitsSet.add(curr);
+			}
+			out.println(visits.toString().replaceAll("[\\[\\]]",""));
+			if(!worked&&visits.equals(pvisits)) {
+				break;
+			}
+			pvisits=visits;
+		}
+		out.close();
 	}
-
+	
 }
 
 
